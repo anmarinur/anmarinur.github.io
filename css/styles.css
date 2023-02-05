@@ -1,0 +1,23 @@
+:root {
+  --primario: #fe5f55;
+  --secundario: #01a0aa;
+  --oscuro: #1b1b1b; 
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 16px; /* 1rem = 10px */
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+h1, h2 {
+  color: var(--primario);
+}
