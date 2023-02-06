@@ -61,6 +61,18 @@ body {
   background: var(--sidebar-color);
 }
 
+.sidebar li {
+  height: 5rem;
+  margin-top: 1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar li .icon {
+  font-size: 2rem;
+}
+
 .sidebar header {
   position: relative;
 }
