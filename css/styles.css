@@ -1,23 +1,105 @@
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  --primario: #fe5f55;
-  --secundario: #01a0aa;
-  --oscuro: #1b1b1b; 
+  /* ===== Colors ===== */
+  --body-color: #E4E9F7;
+  --sidebar-color: #FFF;
+  --primary-color: #695CFE;
+  --primary-color-light: #F6F5FF;
+  --toggle-color: #DDD;
+  --text-color: #707070;
+
+  /* ===== Transition ===== */
+  --tran-02: all 0.2 ease;
+  --tran-03: all 0.3 ease;
+  --tran-04: all 0.4 ease;
+  --tran-05: all 0.5 ease;
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
 }
 
 body {
   font-size: 16px; /* 1rem = 10px */
-  font-family: 'Josefin Sans', sans-serif;
+  height: 100vh;
+  background: var(--body-color);
 }
 
-h1, h2 {
-  color: var(--primario);
+/* ===== Reusable CSS ===== */
+
+.sidebar .text {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text-color)
+}
+
+.sidebar .image {
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+}
+
+
+/* ===== Sidebar ===== */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 25rem;
+  padding: 1rem 1.4rem;
+  background: var(--sidebar-color);
+}
+
+.sidebar header {
+  position: relative;
+}
+
+.sidebar .image-text img {
+  width: 4rem;
+  border-radius: 0.6rem;
+}
+
+.sidebar header .image-text {
+  display: flex;
+  align-items: center;
+}
+
+header .image-text .header-text {
+  display: flex;
+  flex-direction: column; 
+}
+
+.header-text .name {
+  font-weight: 600;
+}
+
+.header-text .profession {
+  margin-top: -0.2rem;
+}
+
+.sidebar header .toggle {
+  position: absolute;
+  top: 50%;
+  right: -2.5rem;
+  transform: translateY(-50%);
+  height: 2.5rem;
+  width: 2.5rem;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--sidebar-color);
+  font-size: 2.2rem;
 }
