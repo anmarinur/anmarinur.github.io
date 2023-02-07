@@ -34,6 +34,18 @@ body {
   background: var(--body-color);
 }
 
+/* ===== Sidebar ===== */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 25rem;
+  padding: 1rem 1.4rem;
+  background: var(--sidebar-color);
+}
+
 /* ===== Reusable CSS ===== */
 
 .sidebar .text {
@@ -48,19 +60,6 @@ body {
   align-items: center;
 }
 
-
-/* ===== Sidebar ===== */
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 25rem;
-  padding: 1rem 1.4rem;
-  background: var(--sidebar-color);
-}
-
 .sidebar li {
   height: 5rem;
   margin-top: 1rem;
@@ -70,7 +69,17 @@ body {
 }
 
 .sidebar li .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 6rem;
   font-size: 2rem;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+  color: var(--text-color);
+  transition: var(--tran-02);
 }
 
 .sidebar header {
@@ -114,4 +123,91 @@ header .image-text .header-text {
   border-radius: 50%;
   color: var(--sidebar-color);
   font-size: 2.2rem;
+}
+
+.sidebar .search-box {
+  background: var(--primary-color-light);
+}
+
+.search-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 0.6rem;
+  background: var(--primary-color-light);
+}
+
+.sidebar li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0.6rem;
+  transition: var(--tran-04);
+}
+
+.sidebar li a:hover {
+  background: var(--primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+  color: var(--sidebar-color);
+}
+
+.sidebar .menu-bar {
+  height: calc(100% - 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-bar .mode {
+  background: var(--primary-color-light);
+}
+
+.menu-bar .mode .moon-sun {
+  height: 5rem;
+  width: 6rem;
+  display: flex;
+  align-items: center;
+}
+
+.menu-bar .mode i {
+  position: absolute;
+}
+
+.menu-bar .mode i.sun {
+  opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 6rem;
+  cursor: pointer;
+}
+
+.toggle-switch .switch {
+  position: relative;
+  height: 2.2rem;
+  width: 4.4rem;
+  border-radius: 2.5rem;
+  background: var(--toggle-color);
+}
+
+.switch::before {
+  content: '';
+  position: absolute;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  top: 50%;
+  left: 0.5rem;
+  transform: translateY(-50%);
+  background: var(--sidebar-color);
 }
