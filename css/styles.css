@@ -32,7 +32,7 @@ body {
   font-size: 16px; /* 1rem = 10px */
   height: 100vh;
   background: var(--body-color);
-  transition: var(--tran-04);
+  transition: var(--tran-05);
 }
 
 body.dark {
@@ -55,6 +55,12 @@ body.dark {
   width: 25rem;
   padding: 1rem 1.4rem;
   background: var(--sidebar-color);
+  transition: var(--tran-05);
+  z-index: 100;
+}
+
+.sidebar.close {
+  width: 8.8rem;
 }
 
 /* ===== Reusable CSS ===== */
@@ -62,13 +68,21 @@ body.dark {
 .sidebar .text {
   font-size: 1.6rem;
   font-weight: 500;
-  color: var(--text-color)
+  color: var(--text-color);
+  transition: var(--tran-03); 
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.sidebar.close .text {
+  opacity: 0;
 }
 
 .sidebar .image {
   min-width: 60px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .sidebar li {
@@ -124,7 +138,7 @@ header .image-text .header-text {
   position: absolute;
   top: 50%;
   right: -2.5rem;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(180deg);
   height: 2.5rem;
   width: 2.5rem;
   background: var(--primary-color);
@@ -134,10 +148,25 @@ header .image-text .header-text {
   border-radius: 50%;
   color: var(--sidebar-color);
   font-size: 2.2rem;
+  transition: var(--tran-03);
+}
+
+.sidebar.close header .toggle {
+  transform: translateY(-50%);
+}
+
+body.dark .sidebar header .toggle {
+  color: var(--text-color);
+}
+
+.sidebar .menu {
+  margin-top: 3.5rem;
 }
 
 .sidebar .search-box {
   background: var(--primary-color-light);
+  border-radius: 0.6rem;
+  transition: var(--tran-05);
 }
 
 .search-box input {
@@ -146,7 +175,10 @@ header .image-text .header-text {
   outline: none;
   border: none;
   border-radius: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
   background: var(--primary-color-light);
+  transition: var(--tran-05);
 }
 
 .sidebar li a {
@@ -168,6 +200,11 @@ header .image-text .header-text {
   color: var(--sidebar-color);
 }
 
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text {
+  color: var(--text-color);
+}
+
 .sidebar .menu-bar {
   height: calc(100% - 5rem);
   display: flex;
@@ -176,6 +213,8 @@ header .image-text .header-text {
 }
 
 .menu-bar .mode {
+  position: relative;
+  border-radius: 0.6rem;
   background: var(--primary-color-light);
 }
 
@@ -188,19 +227,33 @@ header .image-text .header-text {
 
 .menu-bar .mode i {
   position: absolute;
+  transition: var(--tran-03);
 }
 
 .menu-bar .mode i.sun {
   opacity: 0;
 }
 
+body.dark .menu-bar .mode i.sun {
+  opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
+  opacity: 0;
+}
+
 .menu-bar .mode .toggle-switch {
+  position: absolute;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   min-width: 6rem;
   cursor: pointer;
+  border-radius: 0.6rem;
+  background: var(--primary-color-light);
+  transition: var(--tran-05);
 }
 
 .toggle-switch .switch {
@@ -226,4 +279,24 @@ header .image-text .header-text {
 
 body.dark .switch::before {
   left: 2.4rem;
+}
+
+.home {
+  position: relative;
+  height: 100vh;
+  left: 25rem;
+  width: calc(100% - 25rem);
+  transition: var(--tran-05);
+}
+
+.home .text {
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--text-color);
+  padding: 0.8rem 4rem;
+}
+
+.sidebar.close ~ .home {
+  left: 8.8rem;
+  width: calc(100% - 8.8rem);
 }
